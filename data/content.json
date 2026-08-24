@@ -1,0 +1,237 @@
+{
+  "platform": {
+    "name": "FreedomNex",
+    "tagline": "House Of Wisdom",
+    "arabicTitle": "بَيْتُ الْحِكْمَةِ",
+    "bismillah": "بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ",
+    "description": "A digital sanctuary for Islamic philosophy, classical sciences, spiritual ethics, and timeless wisdom inspired by the Abbasid Bayt al-Hikma.",
+    "foundedYear": "2026",
+    "legacyReference": "Bayt al-Hikma (8th–13th Century Baghdad)"
+  },
+  "heroWisdom": {
+    "arabic": "اقْرَأْ بِاسْمِ رَبِّكَ الَّذِي خَلَقَ",
+    "english": "Read! In the name of your Lord who created.",
+    "source": "Surah Al-'Alaq [96:1]",
+    "pageTwoArabic": "رَّبِّ زِدْنِي عِلْمًا",
+    "pageTwoEnglish": "My Lord, increase me in knowledge and understanding.",
+    "pageTwoSource": "Surah Taha [20:114]"
+  },
+  "pillars": [
+    {
+      "id": "quran-tafsir",
+      "title": "Qur'an & Classical Exegesis",
+      "arabic": "القرآن الكريم والتفسير",
+      "icon": "book-open",
+      "summary": "Exploring linguistic nuance, thematic coherence, and timeless hermeneutics across classical and contemporary exegesis.",
+      "details": "Delve into the foundational text of Islam through the analytical lenses of classical mufassirun (Al-Tabari, Al-Zamakhshari, Ibn Kathir, Al-Razi) alongside modern linguistic and thematic methodologies.",
+      "topics": ["Linguistic Miracles (I'jaz)", "Asbab al-Nuzul (Contexts)", "Thematic Surah Analysis", "Comparative Tafsir Traditions"],
+      "color": "#C9A662"
+    },
+    {
+      "id": "hadith-seerah",
+      "title": "Hadith & Prophetic Seerah",
+      "arabic": "الحديث النبوي والسيرة",
+      "icon": "scroll",
+      "summary": "Rigorous critical transmission methodology, moral archetype analysis, and the historical life of the Prophet ﷺ.",
+      "details": "Study the science of Isnad (chains of transmission) and Matn (content critique), examining how ethical paradigms and living traditions were rigorously documented and preserved.",
+      "topics": ["Mustalah al-Hadith (Hadith Terminology)", "Seerah as Moral Philosophy", "Shama'il Muhammadiyyah (Prophetic Character)", "Hadith in Legal Reasoning"],
+      "color": "#D4AF37"
+    },
+    {
+      "id": "philosophy-kalam",
+      "title": "Islamic Philosophy & Kalam",
+      "arabic": "الفلسفة الإسلامية وعلم الكلام",
+      "icon": "compass",
+      "summary": "The dialogue between rational inquiry and revelation from Al-Kindi, Al-Farabi, and Ibn Sina to Al-Ghazali and Ibn Rushd.",
+      "details": "Investigate the golden intellectual debates of the Abbasid and Andalusian eras: the nature of existence, epistemology, divine attributes, causality, and the harmony of reason (Aql) and revelation (Naql).",
+      "topics": ["Kalam Cosmological Arguments", "Ibn Sina's Metaphysics of Being", "Al-Ghazali's Tahafut & Epistemology", "Ibn Rushd's Fasl al-Maqal"],
+      "color": "#E5C378"
+    },
+    {
+      "id": "sciences-civilization",
+      "title": "Sciences & Golden Age Heritage",
+      "arabic": "العلوم وتاريخ الحضارة",
+      "icon": "globe",
+      "summary": "Pioneering breakthroughs in astronomy, optics, algebra, medicine, and architecture at Bayt al-Hikma and beyond.",
+      "details": "Discover how the synthesis of world knowledge in Baghdad, Cairo, Córdoba, and Samarkand sparked revolutionary advancements in empirical science by Ibn al-Haytham, Al-Khwarizmi, Al-Biruni, and Al-Zahrawi.",
+      "topics": ["The Baghdad Translation Movement", "Optics & Empirical Scientific Method", "Algebra & Astronomy (Al-Zij)", "Islamic Medical Ethics & Hospitals (Bimaristans)"],
+      "color": "#C9A662"
+    },
+    {
+      "id": "ethics-hikmah",
+      "title": "Ethics, Tazkiyah & Hikmah",
+      "arabic": "الأخلاق والتزكية والحكمة",
+      "icon": "heart",
+      "summary": "Inner cultivation, virtue ethics, philosophical psychology, and the purification of the heart.",
+      "details": "A contemplative exploration of moral virtue and spiritual realization, drawing from classical treatises of Akhlaq (Miskawayh, Al-Raghib al-Isfahani) and inward purification (Al-Ghazali's Ihya Ulum al-Din).",
+      "topics": ["Virtue Ethics (Tahdhib al-Akhlaq)", "Spiritual Psychology of the Heart", "Contemplative Silence & Dhikr", "Social Justice & Ethical Responsibility"],
+      "color": "#D4AF37"
+    },
+    {
+      "id": "contemporary-reflections",
+      "title": "Contemporary Thought & Dialogue",
+      "arabic": "الفكر المعاصر والحوار",
+      "icon": "feather",
+      "summary": "Engaging today's philosophical questions, technology ethics, artificial intelligence, and civilizational renewal.",
+      "details": "Applying the depth of classical Islamic wisdom to modern existential inquiries: bioethics, environmental stewardship (Khilafah), algorithmic ethics, and fostering constructive cross-cultural discourse.",
+      "topics": ["Islamic Perspectives on AI & Consciousness", "Environmental Ethics & Eco-Theology", "Epistemological Decolonization", "Interfaith Philosophical Discourse"],
+      "color": "#E5C378"
+    }
+  ],
+  "wisdomQuotes": [
+    {
+      "id": "quran-2-269",
+      "category": "Qur'an",
+      "arabic": "يُؤْتِي الْحِكْمَةَ مَن يَشَاءُ ۚ وَمَن يُؤْتَ الْحِكْمَةَ فَقَدْ أُوتِيَ خَيْرًا كَثِيرًا ۗ وَمَا يَذَّكَّرُ إِلَّا أُولُو الْأَلْبَابِ",
+      "translation": "He grants wisdom to whom He pleases; and whoever is granted wisdom has certainly been given an abundance of good. But none will remember except those of understanding.",
+      "source": "Holy Qur'an — Surah Al-Baqarah [2:269]",
+      "context": "The divine definition of 'Hikmah' (deep discernment combining true knowledge with virtuous conduct)."
+    },
+    {
+      "id": "hadith-muslim-2699",
+      "category": "Hadith",
+      "arabic": "مَنْ سَلَكَ طَرِيقًا يَلْتَمِسُ فِيهِ عِلْمًا سَهَّلَ اللَّهُ لَهُ بِهِ طَرِيقًا إِلَى الْجَنَّةِ",
+      "translation": "Whoever treads a path in pursuit of knowledge, Allah will facilitate for them a path to Paradise.",
+      "source": "Prophetic Tradition — Sahih Muslim 2699",
+      "context": "The fundamental sanctification of intellectual seeking and continuous learning in Islamic tradition."
+    },
+    {
+      "id": "al-kindi-truth",
+      "category": "Classical Philosophy",
+      "arabic": "يَنْبَغِي لَنَا أَلَّا نَسْتَحِيَ مِنَ اسْتِحْسَانِ الْحَقِّ وَاقْتِنَاءِ الْحَقِّ مِنْ أَيْنَ أَتَى",
+      "translation": "We ought not to be embarrassed of appreciating the truth and of obtaining it wherever it comes from, even if it comes from earlier generations and foreign peoples.",
+      "source": "Abu Yusuf Ya'qub ibn Ishaq Al-Kindi — Fi al-Falsafah al-Ula (On First Philosophy, c. 840 CE)",
+      "context": "The foundational manifesto of the Baghdad House of Wisdom, establishing universal intellectual open-mindedness."
+    },
+    {
+      "id": "al-ghazali-knowledge",
+      "category": "Ethics & Hikmah",
+      "arabic": "الْعِلْمُ بِلَا عَمَلٍ جُنُونٌ، وَالْعَمَلُ بِغَيْرِ عِلْمٍ لَا يَكُونُ",
+      "translation": "Knowledge without action is insanity, and action without knowledge is vanity.",
+      "source": "Imam Abu Hamid Al-Ghazali — Ayyuha al-Walad (Letter to a Disciple)",
+      "context": "The inseparable union between intellectual mastery and moral manifestation in daily conduct."
+    },
+    {
+      "id": "ibn-sina-reason",
+      "category": "Classical Philosophy",
+      "arabic": "الْوَهْمُ نِصْفُ الدَّاءِ، وَالِاطْمِئْنَانُ نِصْفُ الدَّوَاءِ، وَالصَّبْرُ أَوَّلُ خُطُوَاتِ الشِّفَاءِ",
+      "translation": "Anxiety is half the disease, tranquility is half the remedy, and patience is the first step toward healing.",
+      "source": "Ibn Sina (Avicenna) — Al-Qanun fi al-Tibb (The Canon of Medicine)",
+      "context": "Holistic psychosomatic wisdom linking mental serenity, emotional balance, and physical well-being."
+    },
+    {
+      "id": "quran-3-191",
+      "category": "Qur'an",
+      "arabic": "الَّذِينَ يَذْكُرُونَ اللَّهَ قِيَامًا وَقُعُودًا وَعَلَىٰ جُنُوبِهِمْ وَيَتَفَكَّرُونَ فِي خَلْقِ السَّمَاوَاتِ وَالْأَرْضِ",
+      "translation": "Those who remember Allah standing, sitting, and lying on their sides, and contemplate the creation of the heavens and the earth.",
+      "source": "Holy Qur'an — Surah Ali 'Imran [3:191]",
+      "context": "The pairing of spiritual remembrance with deep cosmological contemplation and scientific curiosity."
+    }
+  ],
+  "learningPaths": [
+    {
+      "id": "path-1",
+      "code": "WIS-101",
+      "title": "Foundations of Hikmah: The Classical Mind",
+      "level": "Introductory",
+      "duration": "6 Weeks • 18 Modules",
+      "badge": "Core Curriculum",
+      "description": "An essential journey into the core epistemology of classical Islamic thought, tracing how reason and revelation flourished together.",
+      "modules": [
+        "Epistemology: Sources of Knowledge in Islam",
+        "The Baghdad Renaissance & Translation Movement",
+        "Logic (Mantiq) and Classical Argumentation",
+        "Virtue Ethics & Character Transformation"
+      ]
+    },
+    {
+      "id": "path-2",
+      "code": "PHI-201",
+      "title": "The Great Debates: Kalam vs. Falsafah",
+      "level": "Intermediate",
+      "duration": "8 Weeks • 24 Modules",
+      "badge": "Philosophy",
+      "description": "Examine the rigorous metaphysical dialogues between the Mu'tazilites, Ash'arites, Avicennian philosophers, and Ghazalian critique.",
+      "modules": [
+        "The Nature of Existence & Causality",
+        "The Problem of Free Will (Qadar)",
+        "Tahafut al-Falasifah & Its Counter-Critiques",
+        "Ibn Rushd's Doctrine of Double Truth Explored"
+      ]
+    },
+    {
+      "id": "path-3",
+      "code": "SCI-301",
+      "title": "The Golden Age of Discovery & Empirical Method",
+      "level": "All Levels",
+      "duration": "5 Weeks • 15 Modules",
+      "badge": "History of Science",
+      "description": "Discover how Muslim polymaths established the modern empirical scientific method through optics, astronomy, medicine, and geometry.",
+      "modules": [
+        "Ibn al-Haytham's Book of Optics & Experimentation",
+        "Al-Biruni's Earth Circumference & Geodesy",
+        "Astrolabes, Observatories & Celestial Geometry",
+        "Bimaristans: The Birth of the Modern Hospital System"
+      ]
+    },
+    {
+      "id": "path-4",
+      "code": "ETH-401",
+      "title": "Contemplative Ethics & Modern Technology",
+      "level": "Advanced",
+      "duration": "6 Weeks • 16 Modules",
+      "badge": "Contemporary Inquiry",
+      "description": "A pioneering course synthesizing ancient Islamic moral psychology with modern challenges in artificial intelligence and transhumanism.",
+      "modules": [
+        "The Fitrah (Human Nature) in the Age of Algorithms",
+        "Islamic Bioethics & Genetic Technologies",
+        "Ecology, Stewardship (Khilafah) & Climate Ethics",
+        "Cultivating Digital Solitude and Presence"
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "year": "762 CE",
+      "title": "Foundation of Baghdad",
+      "description": "Caliph Al-Mansur establishes Madinat al-Salam (The City of Peace), commissioning the first major palace libraries and intellectual circles."
+    },
+    {
+      "year": "813–833 CE",
+      "title": "The Golden Peak of Bayt al-Hikma",
+      "description": "Caliph Al-Ma'mun elevates the House of Wisdom into the world's preeminent academy, observatory, and translation epicenter."
+    },
+    {
+      "year": "965–1040 CE",
+      "title": "The Empirical Revolution",
+      "description": "Al-Hasan Ibn al-Haytham pioneers the modern scientific method in Cairo, formulating controlled experimental verification in 'Kitab al-Manazir'."
+    },
+    {
+      "year": "1058–1111 CE",
+      "title": "The Ghazalian Synthesis",
+      "description": "Imam Abu Hamid Al-Ghazali harmonizes rational jurisprudence, spiritual psychology, and intellectual epistemology in 'Ihya Ulum al-Din'."
+    },
+    {
+      "year": "Present Day",
+      "title": "FreedomNex House Of Wisdom",
+      "description": "Reviving the universal spirit of open inquiry, moral clarity, and timeless contemplation for the digital generation."
+    }
+  ],
+  "testimonials": [
+    {
+      "quote": "FreedomNex captures the rare harmony between rigorous classical scholarship and an exquisitely designed, contemplative digital environment.",
+      "author": "Dr. Tariq M.",
+      "role": "Lecturer in Comparative Philosophy"
+    },
+    {
+      "quote": "The scroll-linked manuscript experience evokes the awe of opening ancient codices in Baghdad, while making classical wisdom instantly accessible.",
+      "author": "Maryam K.",
+      "role": "Researcher in Islamic Intellectual History"
+    },
+    {
+      "quote": "A masterclass in reverent, thoughtful digital design. In an age of endless digital distraction, this is a sanctuary of depth.",
+      "author": "Zayd A.",
+      "role": "Software Architect & Philosophy Student"
+    }
+  ]
+}
