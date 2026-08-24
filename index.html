@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FreedomNex — House Of Wisdom | بَيْتُ الْحِكْمَةِ</title>
+  <meta name="description" content="FreedomNex is a digital sanctuary for Islamic philosophy, classical sciences, spiritual ethics, and timeless wisdom inspired by the historic Abbasid Bayt al-Hikma.">
+  <meta name="keywords" content="FreedomNex, House of Wisdom, Bayt al-Hikma, Islamic Philosophy, Kalam, Quran Tafsir, Hadith, Golden Age Science, Ethics, Hikmah">
+  <meta name="author" content="FreedomNex">
+
+  <!-- Open Graph / Meta -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="FreedomNex — House Of Wisdom">
+  <meta property="og:description" content="A digital manuscript meets modern web design. Explore classical Islamic thought, philosophy, and wisdom.">
+  <meta property="og:image" content="assets/img/logo.jpeg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/jpeg" href="assets/img/logo.jpeg">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cinzel:wght@400;600;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- Background Islamic Geometric Overlay -->
+  <div class="geometric-bg-overlay" aria-hidden="true"></div>
+
+  <!-- Navigation Header -->
+  <header class="site-header" id="site-header">
+    <div class="container nav-inner">
+      <a href="#hero" class="brand-wrapper" aria-label="FreedomNex Home">
+        <img src="assets/img/logo.jpeg" alt="FreedomNex Crest" class="brand-logo-img" width="44" height="44">
+        <div class="brand-text-block">
+          <span class="brand-name">FREEDOMNEX</span>
+          <span class="brand-sub">
+            <span>House Of Wisdom</span>
+            <span class="brand-arabic-badge">بَيْتُ الْحِكْمَةِ</span>
+          </span>
+        </div>
+      </a>
+
+      <nav aria-label="Primary Navigation">
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#pillars">Pillars</a></li>
+          <li><a href="#wisdom">Wisdom</a></li>
+          <li><a href="#learning">Curriculum</a></li>
+          <li><a href="#timeline">Heritage</a></li>
+          <li><a href="#dispatch">Dispatch</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button class="btn-icon-nav" id="open-search-btn" aria-label="Search Wisdom Index">
+          <i class="fas fa-search"></i>
+        </button>
+        <a href="#learning" class="btn-gold-primary nav-cta-desktop">
+          <i class="fas fa-feather-alt"></i>
+          <span>Begin Journey</span>
+        </a>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle-btn" aria-label="Toggle Menu">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer Overlay -->
+  <div class="mobile-drawer-backdrop" id="mobile-drawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation Menu">
+    <div class="mobile-drawer-content">
+      <div class="mobile-drawer-header">
+        <div class="brand-wrapper">
+          <img src="assets/img/logo.jpeg" alt="FreedomNex Logo" class="brand-logo-img" width="36" height="36">
+          <div class="brand-text-block">
+            <span class="brand-name" style="font-size: 1.15rem;">FREEDOMNEX</span>
+            <span class="brand-sub" style="font-size: 0.62rem;">House Of Wisdom</span>
+          </div>
+        </div>
+        <button class="mobile-drawer-close" id="mobile-drawer-close-btn" aria-label="Close menu">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+
+      <nav class="mobile-drawer-nav">
+        <ul>
+          <li><a href="#hero" class="mobile-nav-link"><i class="fas fa-book-open"></i><span>The Codex (Hero)</span></a></li>
+          <li><a href="#about" class="mobile-nav-link"><i class="fas fa-landmark"></i><span>About Bayt al-Hikma</span></a></li>
+          <li><a href="#pillars" class="mobile-nav-link"><i class="fas fa-columns"></i><span>Six Pillars</span></a></li>
+          <li><a href="#wisdom" class="mobile-nav-link"><i class="fas fa-quote-right"></i><span>Wisdom Anthology</span></a></li>
+          <li><a href="#learning" class="mobile-nav-link"><i class="fas fa-graduation-cap"></i><span>Curriculum Paths</span></a></li>
+          <li><a href="#timeline" class="mobile-nav-link"><i class="fas fa-history"></i><span>Heritage Timeline</span></a></li>
+          <li><a href="#community" class="mobile-nav-link"><i class="fas fa-users"></i><span>Voices & Reflections</span></a></li>
+          <li><a href="#dispatch" class="mobile-nav-link"><i class="fas fa-envelope-open-text"></i><span>Dispatch Newsletter</span></a></li>
+        </ul>
+      </nav>
+
+      <div class="mobile-drawer-footer">
+        <a href="#learning" class="btn-gold-primary mobile-drawer-cta">
+          <i class="fas fa-feather-alt"></i>
+          <span>Begin Your Study</span>
+        </a>
+        <div class="mobile-drawer-arabic">بَيْتُ الْحِكْمَةِ • House of Wisdom</div>
+      </div>
+    </div>
+  </div>
+
+  <main id="main-content">
+    <!-- ==========================================================================
+         Section 1 & 2: Hero & 3D Scroll-Pinned Book Experience
+         ========================================================================== -->
+    <div class="hero-scroll-container" id="hero">
+      <div class="hero-sticky-stage">
+        <div class="hero-ambient-glow" aria-hidden="true"></div>
+        
+        <!-- Three.js 3D Book Canvas Container -->
+        <div id="book-canvas-container" aria-label="Interactive 3D Book representing the House of Wisdom codex"></div>
+
+        <!-- Hero Content Layer -->
+        <div class="hero-content-layer">
+          <div class="hero-header-block">
+            <div class="bismillah-calligraphy">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>
+            <div class="hero-arabic-title">بَيْتُ الْحِكْمَةِ الرَّقْمِيُّ</div>
+            <h1 class="hero-main-title">FREEDOMNEX</h1>
+            <p class="hero-tagline">House Of Wisdom</p>
+          </div>
+
+          <!-- Mid-Scroll Revelation Box (Revealed as the book fans open) -->
+          <div class="wisdom-revelation-overlay" id="revelation-overlay">
+            <div class="revelation-filigree-top">
+              <span>✦</span>
+              <span>بَيْتُ الْحِكْمَةِ</span>
+              <span>✦</span>
+            </div>
+            <div class="revelation-arabic">اقْرَأْ بِاسْمِ رَبِّكَ الَّذِي خَلَقَ ❖ رَّبِّ زِدْنِي عِلْمًا</div>
+            <div class="revelation-english">
+              "Read! In the name of your Lord who created... My Lord, increase me in knowledge."
+            </div>
+            <div class="revelation-source">Surah Al-'Alaq [96:1] & Surah Taha [20:114]</div>
+            <div class="revelation-filigree-bottom">
+              <a href="#about" class="btn-gold-outline">Enter The Sanctuary &darr;</a>
+            </div>
+          </div>
+
+          <!-- Scroll Cue -->
+          <div class="hero-scroll-cue" onclick="window.scrollTo({top: window.innerHeight * 1.5, behavior: 'smooth'})">
+            <div class="mouse-indicator">
+              <div class="mouse-wheel"></div>
+            </div>
+            <span>Scroll To Open The Codex</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==========================================================================
+         Section 3: About / Manifesto (Bayt al-Hikma Legacy)
+         ========================================================================== -->
+    <section id="about">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-eyebrow">
+            <span class="arabic-badge">الرؤية والرسالة</span>
+            <span>The Manifesto</span>
+          </div>
+          <h2 class="section-title">Reviving The <span>House Of Wisdom</span></h2>
+          <div class="arabesque-divider">✦ ❖ ✦</div>
+          <p class="section-desc">
+            In eighth-century Baghdad, the historic <em>Bayt al-Hikma</em> united thinkers, translators, and scientists to translate world knowledge, harmonize reason with revelation, and ignite a golden age of intellectual flourishing.
+          </p>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-text-column">
+            <p>
+              <strong>FreedomNex</strong> is born from this timeless tradition: a modern digital sanctuary where Islamic philosophy, classical exegesis, scientific curiosity, and moral cultivation meet contemporary digital elegance.
+            </p>
+            <p>
+              We believe true wisdom (<em>Hikmah</em>) is not mere information, but the profound union of divine revelation, rational discernment (<em>'Aql</em>), and ethical manifestation. Here, seekers of truth engage with primary classical texts, deep philosophical treatises, and structured learning pathways designed for intellectual contemplation.
+            </p>
+            <div class="about-quote-box">
+              <div class="arabic">«يَنْبَغِي لَنَا أَلَّا نَسْتَحِيَ مِنَ اسْتِحْسَانِ الْحَقِّ وَاقْتِنَاءِ الْحَقِّ مِنْ أَيْنَ أَتَى»</div>
+              <p class="quote-text">"We ought not to be embarrassed of appreciating the truth and of obtaining it wherever it comes from, even if it comes from earlier generations and foreign peoples."</p>
+              <div class="quote-cite">— Abu Yusuf Al-Kindi (c. 840 CE), First Philosopher of the House of Wisdom</div>
+            </div>
+          </div>
+
+          <div class="about-visual-column">
+            <div class="manuscript-card">
+              <div class="manuscript-header">
+                <img src="assets/img/logo.jpeg" alt="FreedomNex Emblem" class="manuscript-logo">
+                <div>
+                  <h4>FreedomNex Codex</h4>
+                  <span>بَيْتُ الْحِكْمَةِ • Bayt al-Hikma</span>
+                </div>
+              </div>
+              <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.7;">
+                Preserving intellectual heritage through open access, structured curricula, rigorous source citations, and reverent digital aesthetics.
+              </p>
+              <div class="heritage-stats-grid">
+                <div class="stat-item">
+                  <div class="stat-num">6</div>
+                  <div class="stat-label">Core Pillars</div>
+                </div>
+                <div class="stat-item">
+                  <div class="stat-num">1200+</div>
+                  <div class="stat-label">Years of Heritage</div>
+                </div>
+                <div class="stat-item">
+                  <div class="stat-num">100%</div>
+                  <div class="stat-label">Authentic Citations</div>
+                </div>
+                <div class="stat-item">
+                  <div class="stat-num">Open</div>
+                  <div class="stat-label">Universal Access</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         Section 4: Core Pillars of Wisdom
+         ========================================================================== -->
+    <section id="pillars" style="background: rgba(4, 9, 13, 0.6);">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-eyebrow">
+            <span class="arabic-badge">أركان المعرفة</span>
+            <span>Core Curriculum</span>
+          </div>
+          <h2 class="section-title">The Six <span>Pillars Of Wisdom</span></h2>
+          <div class="arabesque-divider">✦ ❖ ✦</div>
+          <p class="section-desc">
+            Explore foundational disciplines of classical Islamic thought, structured systematically for modern inquiry.
+          </p>
+        </div>
+
+        <!-- Rendered dynamically from data/content.json -->
+        <div class="pillars-grid" id="pillars-grid"></div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         Section 5: Featured Wisdom Carousel
+         ========================================================================== -->
+    <section id="wisdom">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-eyebrow">
+            <span class="arabic-badge">شذرات من الحكمة</span>
+            <span>Illuminated Excerpts</span>
+          </div>
+          <h2 class="section-title">Featured <span>Wisdom & Scripture</span></h2>
+          <div class="arabesque-divider">✦ ❖ ✦</div>
+          <p class="section-desc">
+            Contemplative verses and classical axioms, rigorously referenced from authoritative sources.
+          </p>
+        </div>
+
+        <div class="wisdom-carousel-wrapper">
+          <!-- Filter Tabs -->
+          <div class="carousel-filter-tabs" role="tablist">
+            <button class="filter-tab active" data-filter="all">All Traditions</button>
+            <button class="filter-tab" data-filter="Qur'an">Qur'anic Ayat</button>
+            <button class="filter-tab" data-filter="Hadith">Prophetic Hadith</button>
+            <button class="filter-tab" data-filter="Classical Philosophy">Classical Philosophy</button>
+            <button class="filter-tab" data-filter="Ethics & Hikmah">Moral Ethics</button>
+          </div>
+
+          <!-- Dynamic Quote Display -->
+          <div class="quote-display-container" id="quote-display-container"></div>
+
+          <!-- Navigation & Actions -->
+          <div class="carousel-nav-controls">
+            <div class="quote-action-btns">
+              <button class="btn-copy-quote" id="copy-quote-btn" title="Copy wisdom quote to clipboard">
+                <i class="far fa-copy"></i>
+                <span>Copy Quote</span>
+              </button>
+            </div>
+
+            <div class="carousel-indicators" id="carousel-indicators"></div>
+
+            <div style="display: flex; gap: 0.5rem;">
+              <button class="carousel-btn" id="prev-quote-btn" aria-label="Previous quote">
+                <i class="fas fa-chevron-left"></i>
+              </button>
+              <button class="carousel-btn" id="next-quote-btn" aria-label="Next quote">
+                <i class="fas fa-chevron-right"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         Section 6: Learning Paths & Structured Courses
+         ========================================================================== -->
+    <section id="learning" style="background: rgba(4, 9, 13, 0.6);">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-eyebrow">
+            <span class="arabic-badge">المسارات التعليمية</span>
+            <span>Structured Paths</span>
+          </div>
+          <h2 class="section-title">Interactive <span>Learning Pathways</span></h2>
+          <div class="arabesque-divider">✦ ❖ ✦</div>
+          <p class="section-desc">
+            Self-paced, modular study roadmaps taking you from foundational epistemology to advanced metaphysics and contemporary ethics.
+          </p>
+        </div>
+
+        <!-- Rendered dynamically from data/content.json -->
+        <div class="paths-grid" id="paths-grid"></div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         Section 7: Historical Heritage Timeline
+         ========================================================================== -->
+    <section id="timeline">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-eyebrow">
+            <span class="arabic-badge">تاريخ بيت الحكمة</span>
+            <span>Historical Epochs</span>
+          </div>
+          <h2 class="section-title">The Continuum Of <span>Bayt Al-Hikma</span></h2>
+          <div class="arabesque-divider">✦ ❖ ✦</div>
+          <p class="section-desc">
+            Key milestones in the translation movement, empirical revolution, and the modern revival of the House of Wisdom.
+          </p>
+        </div>
+
+        <!-- Timeline items rendered dynamically -->
+        <div class="timeline-container" id="timeline-container"></div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         Section 8: Community Voices & Reflections
+         ========================================================================== -->
+    <section id="community" style="background: rgba(4, 9, 13, 0.6);">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-eyebrow">
+            <span class="arabic-badge">آراء الدارسين</span>
+            <span>Reflections</span>
+          </div>
+          <h2 class="section-title">Voices From <span>Our Circle</span></h2>
+          <div class="arabesque-divider">✦ ❖ ✦</div>
+          <p class="section-desc">
+            Perspectives from researchers, students, and contemplative minds in our global learning community.
+          </p>
+        </div>
+
+        <div class="testimonials-grid" id="testimonials-grid"></div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         Section 9: Newsletter & Dispatch Signup
+         ========================================================================== -->
+    <section id="dispatch">
+      <div class="container">
+        <div class="newsletter-box">
+          <div class="section-eyebrow" style="margin-bottom: 1rem;">
+            <span class="arabic-badge">النشرة الدورية</span>
+            <span>House of Wisdom Dispatch</span>
+          </div>
+          <h2 style="font-family: var(--font-serif-display); font-size: 2.2rem; color: #fff; margin-bottom: 0.8rem;">
+            Join The Contemplative Circle
+          </h2>
+          <p style="color: var(--text-muted); font-size: 1rem; max-width: 520px; margin: 0 auto;">
+            Receive our curated fortnightly digest containing newly analyzed classical manuscripts, philosophical reflections, and course syllabus releases.
+          </p>
+          <form class="newsletter-form" id="newsletter-form">
+            <input type="email" class="newsletter-input" placeholder="Enter your email address..." required aria-label="Email address">
+            <button type="submit" class="btn-gold-primary">
+              <i class="fas fa-paper-plane"></i>
+              <span>Subscribe</span>
+            </button>
+          </form>
+          <div class="newsletter-note">
+            No spam, zero advertising. Reverent, high-signal scholarship only.
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       Footer
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top-grid">
+        <div>
+          <div class="brand-wrapper">
+            <img src="assets/img/logo.jpeg" alt="FreedomNex Logo" class="brand-logo-img" width="40" height="40">
+            <div class="brand-text-block">
+              <span class="brand-name">FREEDOMNEX</span>
+              <span class="brand-sub">House Of Wisdom</span>
+            </div>
+          </div>
+          <p class="footer-brand-desc">
+            A digital sanctuary dedicated to Islamic philosophy, classical sciences, and the revival of the Abbasid Bayt al-Hikma tradition.
+          </p>
+          <div class="footer-social-links">
+            <a href="#" class="social-icon-btn" aria-label="X / Twitter"><i class="fab fa-x-twitter"></i></a>
+            <a href="#" class="social-icon-btn" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="#" class="social-icon-btn" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="#" class="social-icon-btn" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h5>Core Pillars</h5>
+          <ul>
+            <li><a href="#pillars">Qur'an & Tafsir</a></li>
+            <li><a href="#pillars">Hadith & Seerah</a></li>
+            <li><a href="#pillars">Islamic Philosophy & Kalam</a></li>
+            <li><a href="#pillars">Sciences & Golden Age</a></li>
+            <li><a href="#pillars">Ethics & Hikmah</a></li>
+            <li><a href="#pillars">Contemporary Thought</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Curriculum</h5>
+          <ul>
+            <li><a href="#learning">WIS-101: Classical Mind</a></li>
+            <li><a href="#learning">PHI-201: Kalam vs Falsafah</a></li>
+            <li><a href="#learning">SCI-301: Empirical Method</a></li>
+            <li><a href="#learning">ETH-401: AI & Ethics</a></li>
+            <li><a href="#wisdom">Wisdom Anthology</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Sanctuary</h5>
+          <ul>
+            <li><a href="#about">About Bayt al-Hikma</a></li>
+            <li><a href="#timeline">Historical Timeline</a></li>
+            <li><a href="#dispatch">Fortnightly Dispatch</a></li>
+            <li><a href="data/content.json" target="_blank">Content Schema JSON</a></li>
+            <li><a href="README.md" target="_blank">Deployment Docs</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom-row">
+        <div>&copy; 2026 FreedomNex — House Of Wisdom. All rights reserved.</div>
+        <div class="footer-arabic-flourish">وَمَن يُؤْتَ الْحِكْمَةَ فَقَدْ أُوتِيَ خَيْرًا كَثِيرًا</div>
+        <div>Designed for Contemplation & Learning.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       Interactive Modals
+       ========================================================================== -->
+
+  <!-- Search Modal -->
+  <div class="modal-backdrop" id="search-modal" role="dialog" aria-modal="true" aria-labelledby="search-modal-title">
+    <div class="modal-window">
+      <button class="modal-close-btn" id="close-search-btn" aria-label="Close search modal">&times;</button>
+      <h3 id="search-modal-title" style="font-family: var(--font-serif-display); color: #fff; margin-bottom: 1.5rem;">
+        Search The House Of Wisdom
+      </h3>
+      <input type="text" id="search-input-field" class="newsletter-input" placeholder="Search concepts (e.g. Kalam, Ibn Sina, Optics, Ethics)..." style="width: 100%; margin-bottom: 1.5rem;">
+      <div id="search-results-list" style="max-height: 350px; overflow-y: auto;">
+        <p style="color: var(--text-dim); text-align: center; padding: 2rem 0;">Type any concept, philosopher, ayah or subject...</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pillar Details Modal -->
+  <div class="modal-backdrop" id="pillar-modal" role="dialog" aria-modal="true">
+    <div class="modal-window">
+      <button class="modal-close-btn" id="close-pillar-btn" aria-label="Close pillar modal">&times;</button>
+      <div id="pillar-modal-body"></div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Element -->
+  <div class="toast-notice" id="toast-notice" role="status" aria-live="polite">
+    <i class="fas fa-check-circle" style="color: var(--gold-300);"></i>
+    <span class="toast-text">Action recorded.</span>
+  </div>
+
+  <!-- Three.js CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+  <!-- Application Scripts -->
+  <script src="assets/js/book-scroll.js"></script>
+  <script src="assets/js/main.js"></script>
+
+</body>
+</html>
