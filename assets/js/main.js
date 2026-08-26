@@ -34,7 +34,12 @@
     "platform": {
       "name": "FreedomNex",
       "tagline": "House Of Wisdom",
-      "arabicTitle": "بَيْتُ الْحِكْمَةِ"
+      "arabicTitle": "بَيْتُ الْحِكْمَةِ",
+      "contact": {
+        "phone": "+919211043281",
+        "phoneFormatted": "+91 92110 43281",
+        "whatsapp": "+919211043281"
+      }
     },
     "pillars": [
       {
@@ -461,29 +466,7 @@
       });
     }
 
-    // Search buttons
-    const searchBtn = document.getElementById('open-search-btn');
-    const closeSearchBtn = document.getElementById('close-search-btn');
-    const searchInput = document.getElementById('search-input-field');
 
-    if (searchBtn) {
-      searchBtn.addEventListener('click', () => {
-        if (searchModal) {
-          searchModal.classList.add('open');
-          setTimeout(() => searchInput && searchInput.focus(), 100);
-        }
-      });
-    }
-
-    if (closeSearchBtn) {
-      closeSearchBtn.addEventListener('click', () => {
-        if (searchModal) searchModal.classList.remove('open');
-      });
-    }
-
-    if (searchInput) {
-      searchInput.addEventListener('input', handleLiveSearch);
-    }
 
     // Modal backdrops click-to-close
     document.querySelectorAll('.modal-backdrop').forEach(modal => {

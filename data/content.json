@@ -6,7 +6,14 @@
     "bismillah": "بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ",
     "description": "A digital sanctuary for Islamic philosophy, classical sciences, spiritual ethics, and timeless wisdom inspired by the Abbasid Bayt al-Hikma.",
     "foundedYear": "2026",
-    "legacyReference": "Bayt al-Hikma (8th–13th Century Baghdad)"
+    "legacyReference": "Bayt al-Hikma (8th–13th Century Baghdad)",
+    "contact": {
+      "phone": "+919211043281",
+      "phoneFormatted": "+91 92110 43281",
+      "whatsapp": "+919211043281",
+      "email": "contact@freedomnex.org",
+      "youtube": "https://www.youtube.com/@freedomnex"
+    }
   },
   "heroWisdom": {
     "arabic": "اقْرَأْ بِاسْمِ رَبِّكَ الَّذِي خَلَقَ",
