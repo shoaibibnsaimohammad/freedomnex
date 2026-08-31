@@ -131,16 +131,16 @@
     function renderCover(logoImg) {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      // Royal midnight navy / sapphire leather gradient background
+      // Royal Lapis Lazuli / Midnight Sapphire Leather gradient background
       const bgGradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
-      bgGradient.addColorStop(0, '#071629');
-      bgGradient.addColorStop(0.5, '#0e2b4d');
-      bgGradient.addColorStop(1, '#051120');
+      bgGradient.addColorStop(0, '#0a1d36');
+      bgGradient.addColorStop(0.5, '#143865');
+      bgGradient.addColorStop(1, '#071529');
       ctx.fillStyle = bgGradient;
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
       // Noise/grain texture simulation
-      ctx.fillStyle = 'rgba(255, 255, 255, 0.015)';
+      ctx.fillStyle = 'rgba(255, 255, 255, 0.02)';
       for (let i = 0; i < 40000; i++) {
         const rx = Math.random() * canvas.width;
         const ry = Math.random() * canvas.height;
@@ -148,12 +148,12 @@
       }
 
       // Outer Gold Foil Border
-      ctx.strokeStyle = '#c9a662';
+      ctx.strokeStyle = '#d4af37';
       ctx.lineWidth = 14;
       ctx.strokeRect(40, 40, canvas.width - 80, canvas.height - 80);
 
       // Inner Delicate Filigree Border
-      ctx.strokeStyle = '#e5c378';
+      ctx.strokeStyle = '#f3e0a3';
       ctx.lineWidth = 4;
       ctx.strokeRect(65, 65, canvas.width - 130, canvas.height - 130);
 
@@ -168,20 +168,20 @@
         // Outer Gold Foil Ring around Circle
         ctx.beginPath();
         ctx.arc(cx, cy, radius + 14, 0, Math.PI * 2);
-        ctx.fillStyle = '#c9a662';
+        ctx.fillStyle = '#d4af37';
         ctx.fill();
 
-        // Inner Navy Gap Ring
+        // Inner Sapphire Gap Ring
         ctx.beginPath();
         ctx.arc(cx, cy, radius + 7, 0, Math.PI * 2);
-        ctx.fillStyle = '#071629';
+        ctx.fillStyle = '#0a1d36';
         ctx.fill();
 
         // Inner Bright Gold Accent Line
         ctx.beginPath();
         ctx.arc(cx, cy, radius + 3, 0, Math.PI * 2);
         ctx.lineWidth = 4;
-        ctx.strokeStyle = '#e5c378';
+        ctx.strokeStyle = '#f3e0a3';
         ctx.stroke();
 
         // White Circular Background for Pristine Logo Display
@@ -382,28 +382,28 @@
     // Calligraphic page contents
     ctx.textAlign = 'center';
     if (isLeft) {
-      ctx.fillStyle = '#0c233f';
+      ctx.fillStyle = '#0d223f';
       ctx.font = 'bold 44px "Amiri", serif';
       ctx.fillText('اقْرَأْ بِاسْمِ رَبِّكَ الَّذِي خَلَقَ', canvas.width / 2, 450);
 
-      ctx.fillStyle = '#3e3629';
+      ctx.fillStyle = '#2b1b14';
       ctx.font = 'italic 28px "Lora", serif';
       ctx.fillText('"Read! In the name of your Lord who created."', canvas.width / 2, 550);
 
-      ctx.fillStyle = '#aa8640';
+      ctx.fillStyle = '#8c3214';
       ctx.font = '20px "Inter", sans-serif';
       ctx.letterSpacing = '3px';
       ctx.fillText('SURAH AL-ALAQ [96:1]', canvas.width / 2, 630);
     } else {
-      ctx.fillStyle = '#0c233f';
+      ctx.fillStyle = '#0d223f';
       ctx.font = 'bold 44px "Amiri", serif';
       ctx.fillText('رَّبِّ زِدْنِي عِلْمًا', canvas.width / 2, 450);
 
-      ctx.fillStyle = '#3e3629';
+      ctx.fillStyle = '#2b1b14';
       ctx.font = 'italic 28px "Lora", serif';
       ctx.fillText('"My Lord, increase me in knowledge."', canvas.width / 2, 550);
 
-      ctx.fillStyle = '#aa8640';
+      ctx.fillStyle = '#8c3214';
       ctx.font = '20px "Inter", sans-serif';
       ctx.letterSpacing = '3px';
       ctx.fillText('SURAH TAHA [20:114]', canvas.width / 2, 630);
@@ -435,7 +435,7 @@
     });
 
     const spineMaterial = new THREE.MeshStandardMaterial({
-      color: 0x091c33,
+      color: 0x0a1d36,
       roughness: 0.4,
       metalness: 0.3
     });
