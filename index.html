@@ -35,38 +35,60 @@
 
   <!-- Navigation Header -->
   <header class="site-header" id="site-header">
-    <div class="container nav-inner">
-      <a href="#hero" class="brand-wrapper" aria-label="FreedomNex Home">
-        <img src="assets/img/logo.jpeg" alt="FreedomNex Crest" class="brand-logo-img" width="44" height="44">
-        <div class="brand-text-block">
-          <span class="brand-name">FREEDOMNEX</span>
-          <span class="brand-sub">
-            <span>House Of Wisdom</span>
-            <span class="brand-arabic-badge">بَيْتُ الْحِكْمَةِ</span>
-          </span>
+    <!-- Top Black Strip: Contact Number & User Time with Timezone -->
+    <div class="top-strip" id="top-strip">
+      <div class="container top-strip-inner">
+        <div class="top-strip-item top-strip-contact">
+          <a href="tel:+919211043281" class="top-strip-link" aria-label="FreedomNex Contact Phone Number">
+            <i class="fas fa-phone-alt top-strip-icon" aria-hidden="true"></i>
+            <span class="top-strip-label">Contact:</span>
+            <span class="top-strip-value">+91 92110 43281</span>
+          </a>
         </div>
-      </a>
+        <div class="top-strip-item top-strip-time" id="top-strip-time" aria-label="User Local Time and Timezone">
+          <i class="far fa-clock top-strip-icon" aria-hidden="true"></i>
+          <span class="top-strip-label">Local Time:</span>
+          <span class="top-strip-value" id="user-live-clock">--:--:--</span>
+          <span class="top-strip-timezone" id="user-live-timezone">Detecting timezone...</span>
+        </div>
+      </div>
+    </div>
 
-      <nav aria-label="Primary Navigation">
-        <ul class="nav-links">
-          <li><a href="#about">About</a></li>
-          <li><a href="#pillars">Pillars</a></li>
-          <li><a href="#wisdom">Wisdom</a></li>
-          <li><a href="#learning">Curriculum</a></li>
-          <li><a href="#timeline">Heritage</a></li>
-          <li><a href="#dispatch">Dispatch</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-
-      <div class="header-actions">
-        <a href="#learning" class="btn-gold-primary nav-cta-desktop">
-          <i class="fas fa-feather-alt"></i>
-          <span>Begin Journey</span>
+    <!-- Main Navigation Bar -->
+    <div class="navbar-wrapper">
+      <div class="container nav-inner">
+        <a href="#hero" class="brand-wrapper" aria-label="FreedomNex Home">
+          <img src="assets/img/logo.jpeg" alt="FreedomNex Crest" class="brand-logo-img" width="44" height="44">
+          <div class="brand-text-block">
+            <span class="brand-name">FREEDOMNEX</span>
+            <span class="brand-sub">
+              <span>House Of Wisdom</span>
+              <span class="brand-arabic-badge">بَيْتُ الْحِكْمَةِ</span>
+            </span>
+          </div>
         </a>
-        <button class="mobile-menu-toggle" id="mobile-menu-toggle-btn" aria-label="Toggle Menu">
-          <i class="fas fa-bars"></i>
-        </button>
+
+        <nav aria-label="Primary Navigation">
+          <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#pillars">Pillars</a></li>
+            <li><a href="#wisdom">Wisdom</a></li>
+            <li><a href="#learning">Curriculum</a></li>
+            <li><a href="#timeline">Heritage</a></li>
+            <li><a href="#dispatch">Dispatch</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+
+        <div class="header-actions">
+          <a href="#learning" class="btn-gold-primary nav-cta-desktop">
+            <i class="fas fa-feather-alt"></i>
+            <span>Begin Journey</span>
+          </a>
+          <button class="mobile-menu-toggle" id="mobile-menu-toggle-btn" aria-label="Toggle Menu">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
       </div>
     </div>
   </header>

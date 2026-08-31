@@ -249,6 +249,7 @@
 
   // Initialize
   async function init() {
+    setupLiveTimeAndZone();
     setupScrollHeader();
     await loadContentData();
     renderPillars();
@@ -259,7 +260,60 @@
     setupEventListeners();
   }
 
-  // 1. Scroll-linked Navigation Header
+  // 1. Live User Time and Timezone Display
+  function setupLiveTimeAndZone() {
+    const clockEl = document.getElementById('user-live-clock');
+    const tzEl = document.getElementById('user-live-timezone');
+    if (!clockEl) return;
+
+    let userTimeZone = 'UTC';
+    let timeZoneShort = '';
+
+    try {
+      userTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone || 'UTC';
+    } catch (e) {
+      console.warn('Could not determine user timezone:', e);
+    }
+
+    function updateLiveClock() {
+      const now = new Date();
+
+      // Format user's local time (12-hour format with AM/PM & seconds)
+      const timeString = now.toLocaleTimeString(undefined, {
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: true
+      });
+
+      // Format timezone short name / offset (e.g., GMT+5:30, IST, EST)
+      try {
+        const parts = new Intl.DateTimeFormat('en-US', {
+          timeZoneName: 'short'
+        }).formatToParts(now);
+        const tzPart = parts.find(p => p.type === 'timeZoneName');
+        timeZoneShort = tzPart ? tzPart.value : '';
+      } catch (e) {
+        timeZoneShort = '';
+      }
+
+      clockEl.textContent = timeString;
+
+      if (tzEl) {
+        let displayTz = userTimeZone;
+        if (timeZoneShort && timeZoneShort !== userTimeZone) {
+          displayTz = `${userTimeZone} (${timeZoneShort})`;
+        }
+        tzEl.textContent = displayTz;
+        tzEl.title = `Your detected timezone: ${userTimeZone} ${timeZoneShort ? '• ' + timeZoneShort : ''}`;
+      }
+    }
+
+    updateLiveClock();
+    setInterval(updateLiveClock, 1000);
+  }
+
+  // 2. Scroll-linked Navigation Header
   function setupScrollHeader() {
     window.addEventListener('scroll', () => {
       if (window.scrollY > 50) {
