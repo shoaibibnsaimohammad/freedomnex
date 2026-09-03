@@ -97,13 +97,13 @@
     isMobile = width <= 768;
 
     if (width <= 380) {
-      camera.position.set(0, 0.1, 7.2);
+      camera.position.set(0, 0.05, 5.8);
     } else if (width <= 480) {
-      camera.position.set(0, 0.15, 6.4);
+      camera.position.set(0, 0.05, 5.2);
     } else if (width <= 768) {
-      camera.position.set(0, 0.2, 5.6);
+      camera.position.set(0, 0.08, 4.6);
     } else {
-      camera.position.set(0, 0.35, 4.4);
+      camera.position.set(0, 0.08, 3.8);
     }
   }
 
@@ -302,32 +302,109 @@
   }
 
   /**
-   * Helper: Generate a parchment manuscript texture for the inner pages
+   * Manuscript Page Data for 10 Unique Qur'anic Ayat across Spreads
    */
-  function createPageTexture(isLeft) {
+  const MANUSCRIPT_PAGES = [
+    {
+      arabic: 'بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ',
+      english: '"In the name of Allah, the Entirely Merciful, the Especially Merciful."',
+      ref: 'SURAH AL-FATIHAH [1:1]',
+      isLeft: true
+    },
+    {
+      arabic: 'اقْرَأْ بِاسْمِ رَبِّكَ الَّذِي خَلَقَ',
+      english: '"Read! In the name of your Lord who created."',
+      ref: 'SURAH AL-ALAQ [96:1]',
+      isLeft: false
+    },
+    {
+      arabic: 'يُؤْتِي الْحِكْمَةَ مَن يَشَاءُ',
+      english: '"He grants wisdom to whom He wills; and whoever receives wisdom has received abundant good."',
+      ref: 'SURAH AL-BAQARAH [2:269]',
+      isLeft: true
+    },
+    {
+      arabic: 'رَّبِّ زِدْنِي عِلْمًا',
+      english: '"My Lord, increase me in knowledge."',
+      ref: 'SURAH TAHA [20:114]',
+      isLeft: false
+    },
+    {
+      arabic: 'هَلْ يَسْتَوِي الَّذِينَ يَعْلَمُونَ وَالَّذِينَ لَا يَعْلَمُونَ',
+      english: '"Are those who know equal to those who do not know?"',
+      ref: 'SURAH AZ-ZUMAR [39:9]',
+      isLeft: true
+    },
+    {
+      arabic: 'إِنَّ فِي خَلْقِ السَّمَاوَاتِ وَالْأَرْضِ لَآيَاتٍ لِّأُولِي الْأَلْبَابِ',
+      english: '"In the creation of the heavens and earth are signs for people of reason."',
+      ref: "SURAH ALI 'IMRAN [3:190]",
+      isLeft: false
+    },
+    {
+      arabic: 'عَلَّمَ الْإِنسَانَ مَا لَمْ يَعْلَمْ',
+      english: '"He taught humanity that which they knew not."',
+      ref: 'SURAH AL-ALAQ [96:5]',
+      isLeft: true
+    },
+    {
+      arabic: 'وَقُل رَّبِّ أَدْخِلْنِي مُدْخَلَ صِدْقٍ',
+      english: '"My Lord, cause me to enter a sound entrance and grant me supportive authority."',
+      ref: 'SURAH AL-ISRA [17:80]',
+      isLeft: false
+    },
+    {
+      arabic: 'ن ۚ وَالْقَلَمِ وَمَا يَسْطُرُونَ',
+      english: '"Nun. By the pen and what they inscribe."',
+      ref: 'SURAH AL-QALAM [68:1]',
+      isLeft: true
+    },
+    {
+      arabic: 'اللَّهُ نُورُ السَّمَاوَاتِ وَالْأَرْضِ',
+      english: '"Allah is the Light of the heavens and the earth."',
+      ref: 'SURAH AN-NUR [24:35]',
+      isLeft: false
+    }
+  ];
+
+  /**
+   * Helper: Generate a high-resolution manuscript texture for inner pages
+   */
+  function createManuscriptPageTexture(data) {
     const canvas = document.createElement('canvas');
     canvas.width = 1024;
     canvas.height = 1400;
     const ctx = canvas.getContext('2d');
+    const isLeft = data.isLeft;
 
-    // Parchment gradient
+    // Parchment gradient with rich leather spine shadow
     const grad = ctx.createLinearGradient(0, 0, canvas.width, 0);
     if (isLeft) {
-      grad.addColorStop(0, '#f8f3e6');
-      grad.addColorStop(0.9, '#f4ece0');
-      grad.addColorStop(1, '#d8cbba'); // spine shadow
+      grad.addColorStop(0, '#f9f6ef');
+      grad.addColorStop(0.85, '#f4ede1');
+      grad.addColorStop(1, '#c8b8a0');
     } else {
-      grad.addColorStop(0, '#d8cbba'); // spine shadow
-      grad.addColorStop(0.1, '#f4ece0');
-      grad.addColorStop(1, '#f8f3e6');
+      grad.addColorStop(0, '#c8b8a0');
+      grad.addColorStop(0.15, '#f4ede1');
+      grad.addColorStop(1, '#f9f6ef');
     }
     ctx.fillStyle = grad;
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-    // Gilded page border
+    // Gilded page borders
     ctx.strokeStyle = '#d4af37';
-    ctx.lineWidth = 6;
-    ctx.strokeRect(50, 50, canvas.width - 100, canvas.height - 100);
+    ctx.lineWidth = 7;
+    ctx.strokeRect(45, 45, canvas.width - 90, canvas.height - 90);
+
+    ctx.strokeStyle = 'rgba(201, 166, 98, 0.5)';
+    ctx.lineWidth = 2.5;
+    ctx.strokeRect(62, 62, canvas.width - 124, canvas.height - 124);
+
+    // Corner Ornaments on manuscript pages
+    drawCornerOrnament(ctx, 75, 75);
+    drawCornerOrnament(ctx, canvas.width - 75, 75);
+    drawCornerOrnament(ctx, 75, canvas.height - 75);
+    drawCornerOrnament(ctx, canvas.width - 75, canvas.height - 75);
 
     // Top Brand Emblem on Page Header
     const pageLogoImg = new Image();
@@ -335,10 +412,9 @@
       if (img && img.complete && img.naturalWidth !== 0) {
         ctx.save();
         const pcx = canvas.width / 2;
-        const pcy = 220;
-        const pr = 65;
+        const pcy = 195;
+        const pr = 55;
 
-        // Circular Gold Ring
         ctx.beginPath();
         ctx.arc(pcx, pcy, pr + 5, 0, Math.PI * 2);
         ctx.fillStyle = '#c9a662';
@@ -375,55 +451,69 @@
       drawPageHeaderLogo(pageLogoImg);
     }
 
-    ctx.strokeStyle = 'rgba(201, 166, 98, 0.4)';
-    ctx.lineWidth = 2;
-    ctx.strokeRect(65, 65, canvas.width - 130, canvas.height - 130);
-
     // Calligraphic page contents
     ctx.textAlign = 'center';
-    if (isLeft) {
-      ctx.fillStyle = '#0d223f';
-      ctx.font = 'bold 44px "Amiri", serif';
-      ctx.fillText('اقْرَأْ بِاسْمِ رَبِّكَ الَّذِي خَلَقَ', canvas.width / 2, 450);
 
-      ctx.fillStyle = '#2b1b14';
-      ctx.font = 'italic 28px "Lora", serif';
-      ctx.fillText('"Read! In the name of your Lord who created."', canvas.width / 2, 550);
+    // Header label
+    ctx.fillStyle = '#c9a662';
+    ctx.font = '700 20px "Cinzel", serif';
+    ctx.fillText('❖  BAYT AL-HIKMA  ❖', canvas.width / 2, 310);
 
-      ctx.fillStyle = '#8c3214';
-      ctx.font = '20px "Inter", sans-serif';
-      ctx.letterSpacing = '3px';
-      ctx.fillText('SURAH AL-ALAQ [96:1]', canvas.width / 2, 630);
-    } else {
-      ctx.fillStyle = '#0d223f';
-      ctx.font = 'bold 44px "Amiri", serif';
-      ctx.fillText('رَّبِّ زِدْنِي عِلْمًا', canvas.width / 2, 450);
+    // Arabic Calligraphy
+    ctx.fillStyle = '#0a1d36';
+    ctx.font = 'bold 44px "Amiri", serif';
+    ctx.fillText(data.arabic, canvas.width / 2, 470);
 
-      ctx.fillStyle = '#2b1b14';
-      ctx.font = 'italic 28px "Lora", serif';
-      ctx.fillText('"My Lord, increase me in knowledge."', canvas.width / 2, 550);
-
-      ctx.fillStyle = '#8c3214';
-      ctx.font = '20px "Inter", sans-serif';
-      ctx.letterSpacing = '3px';
-      ctx.fillText('SURAH TAHA [20:114]', canvas.width / 2, 630);
+    // English Meaning
+    ctx.fillStyle = '#1e293b';
+    ctx.font = 'italic 28px "Lora", serif';
+    
+    // Multi-line wrap for English text
+    const words = data.english.split(' ');
+    let line = '';
+    let startY = 600;
+    for (let n = 0; n < words.length; n++) {
+      const testLine = line + words[n] + ' ';
+      const metrics = ctx.measureText(testLine);
+      if (metrics.width > 700 && n > 0) {
+        ctx.fillText(line, canvas.width / 2, startY);
+        line = words[n] + ' ';
+        startY += 44;
+      } else {
+        line = testLine;
+      }
     }
+    ctx.fillText(line, canvas.width / 2, startY);
+
+    // Surah / Book Citation
+    ctx.fillStyle = '#1d4ed8';
+    ctx.font = 'bold 20px "Inter", sans-serif';
+    ctx.letterSpacing = '3px';
+    ctx.fillText(data.ref, canvas.width / 2, startY + 85);
 
     const texture = new THREE.CanvasTexture(canvas);
+    if (isLeft) {
+      // Un-mirror text when rotated 180 degrees around Y on left-facing leaves
+      texture.wrapS = THREE.RepeatWrapping;
+      texture.repeat.x = -1;
+      texture.offset.x = 1;
+    }
     texture.generateMipmaps = true;
     return texture;
   }
 
   function buildBook() {
     bookGroup = new THREE.Group();
-    bookGroup.rotation.x = 0.45;
-    bookGroup.rotation.y = -0.3;
-    bookGroup.rotation.z = -0.05;
+    // Straight upright orientation with minimal subtle tilt
+    bookGroup.rotation.x = 0.08;
+    bookGroup.rotation.y = 0.0;
+    bookGroup.rotation.z = 0.0;
     scene.add(bookGroup);
 
-    const bookWidth = 1.9;
-    const bookHeight = 2.6;
-    const bookDepth = 0.28;
+    // Small, Compact and Thick Book Dimensions
+    const bookWidth = 1.32;
+    const bookHeight = 1.82;
+    const bookDepth = 0.42; // Thick authentic tome
 
     // Materials
     const coverTexture = createCoverTexture();
@@ -442,44 +532,38 @@
 
     const pageEdgeMaterial = new THREE.MeshStandardMaterial({
       color: 0xe5c378,
-      roughness: 0.5,
-      metalness: 0.6
+      roughness: 0.4,
+      metalness: 0.7
     });
 
-    const leftPageTexture = createPageTexture(true);
-    const rightPageTexture = createPageTexture(false);
-
-    const leftPageMat = new THREE.MeshStandardMaterial({
-      map: leftPageTexture,
+    // Generate textures for all 10 pages
+    const pageTextures = MANUSCRIPT_PAGES.map(data => createManuscriptPageTexture(data));
+    const pageMaterials = pageTextures.map(tex => new THREE.MeshStandardMaterial({
+      map: tex,
       roughness: 0.8
-    });
+    }));
 
-    const rightPageMat = new THREE.MeshStandardMaterial({
-      map: rightPageTexture,
-      roughness: 0.8
-    });
-
-    // 1. Spine (Hinge)
-    const spineGeo = new THREE.CylinderGeometry(bookDepth / 2, bookDepth / 2, bookHeight, 16, 1, false, 0, Math.PI);
+    // 1. Thick Spine (Hinge)
+    const spineGeo = new THREE.CylinderGeometry(bookDepth / 2, bookDepth / 2, bookHeight, 24, 1, false, 0, Math.PI);
     spineMesh = new THREE.Mesh(spineGeo, spineMaterial);
     spineMesh.rotation.y = Math.PI / 2;
     spineMesh.position.set(0, 0, 0);
     bookGroup.add(spineMesh);
 
-    // 2. Back Cover & Base Page Block (Static relative to book group)
-    const backCoverGeo = new THREE.BoxGeometry(bookWidth, bookHeight, 0.04);
+    // 2. Back Cover (Static relative to book group)
+    const backCoverGeo = new THREE.BoxGeometry(bookWidth, bookHeight, 0.035);
     backCoverMesh = new THREE.Mesh(backCoverGeo, coverMaterial);
     backCoverMesh.position.set(bookWidth / 2, 0, -bookDepth / 2);
     bookGroup.add(backCoverMesh);
 
-    // Base Right Page Block
-    const pageBlockGeo = new THREE.BoxGeometry(bookWidth * 0.96, bookHeight * 0.96, bookDepth * 0.85);
+    // Base Right Page Block (Thick gilded paper block showing Page 9 Ayah)
+    const pageBlockGeo = new THREE.BoxGeometry(bookWidth * 0.96, bookHeight * 0.96, bookDepth * 0.88);
     const pageBlockMesh = new THREE.Mesh(pageBlockGeo, [
       pageEdgeMaterial, // Right edge (gilded)
       pageEdgeMaterial, // Left edge
       pageEdgeMaterial, // Top edge
       pageEdgeMaterial, // Bottom edge
-      rightPageMat,     // Front face (Parchment manuscript)
+      pageMaterials[9], // Front face (Final Page 9 Ayah)
       pageEdgeMaterial  // Back face
     ]);
     pageBlockMesh.position.set((bookWidth * 0.96) / 2 + 0.02, 0, 0);
@@ -493,24 +577,43 @@
     frontCoverMesh.position.set(bookWidth / 2, 0, 0);
     frontCoverGroup.add(frontCoverMesh);
 
+    // Inside Front Cover (Shows Page 0 Ayah: Bismillah / Al-Fatihah)
+    const insideCoverPlaneGeo = new THREE.PlaneGeometry(bookWidth * 0.95, bookHeight * 0.95);
+    const insideCoverMesh = new THREE.Mesh(insideCoverPlaneGeo, pageMaterials[0]);
+    insideCoverMesh.rotation.y = Math.PI;
+    insideCoverMesh.position.set(bookWidth / 2, 0, -0.018);
+    frontCoverGroup.add(insideCoverMesh);
+
     bookGroup.add(frontCoverGroup);
 
-    // 4. Turning Inner Pages (Fanning stack)
+    // 4. Turning Inner Pages (4 sequential turning leaves with double-sided distinct Ayat)
     const numTurningPages = 4;
     pageMeshes = [];
 
     for (let i = 0; i < numTurningPages; i++) {
       const pageHingeGroup = new THREE.Group();
+      // Distribute leaves across the thick paper depth
       pageHingeGroup.position.set(0, 0, (bookDepth / 2) * (1 - (i + 1) / (numTurningPages + 1)));
 
       const pagePlaneGeo = new THREE.PlaneGeometry(bookWidth * 0.95, bookHeight * 0.95, 4, 1);
-      const pageMat = i % 2 === 0 ? leftPageMat : rightPageMat;
-      const singlePageMesh = new THREE.Mesh(pagePlaneGeo, pageMat);
-      singlePageMesh.position.set((bookWidth * 0.95) / 2 + 0.02, 0, 0);
-      singlePageMesh.castShadow = true;
-      singlePageMesh.receiveShadow = true;
 
-      pageHingeGroup.add(singlePageMesh);
+      // Front side of turning leaf (Pages 1, 3, 5, 7)
+      const frontMat = pageMaterials[i * 2 + 1];
+      const frontPageMesh = new THREE.Mesh(pagePlaneGeo, frontMat);
+      frontPageMesh.position.set((bookWidth * 0.95) / 2 + 0.02, 0, 0.001);
+      frontPageMesh.castShadow = true;
+      frontPageMesh.receiveShadow = true;
+      pageHingeGroup.add(frontPageMesh);
+
+      // Back side of turning leaf (Pages 2, 4, 6, 8 - visible when turned over to the left)
+      const backMat = pageMaterials[i * 2 + 2];
+      const backPageMesh = new THREE.Mesh(pagePlaneGeo, backMat);
+      backPageMesh.rotation.y = Math.PI;
+      backPageMesh.position.set((bookWidth * 0.95) / 2 + 0.02, 0, -0.001);
+      backPageMesh.castShadow = true;
+      backPageMesh.receiveShadow = true;
+      pageHingeGroup.add(backPageMesh);
+
       bookGroup.add(pageHingeGroup);
       pageMeshes.push(pageHingeGroup);
     }
@@ -576,32 +679,34 @@
     scrollProgress += (targetScrollProgress - scrollProgress) * 0.1;
 
     // Smooth mouse parallax
+
     mouse.x += (mouse.targetX - mouse.x) * 0.05;
     mouse.y += (mouse.targetY - mouse.y) * 0.05;
 
     if (bookGroup) {
       // 1. Cover Opening Rotation (from 0 to -Math.PI radians)
-      const coverOpenAngle = -Math.PI * Math.min(1, scrollProgress * 1.5);
+      const coverOpenAngle = -Math.PI * Math.min(1, scrollProgress * 2.2);
       frontCoverGroup.rotation.y = coverOpenAngle;
 
-      // 2. Fanning pages turning in sequential cascade
+      // 2. Sequential 4-leaf turning cascade as user scrolls through the book
       pageMeshes.forEach((pageGroup, idx) => {
-        const delay = (idx + 1) * 0.12;
-        const pageProgress = Math.max(0, Math.min(1, (scrollProgress - delay) * 1.8));
-        pageGroup.rotation.y = -Math.PI * pageProgress * 0.94;
+        const startTurn = 0.16 + idx * 0.18;
+        const turnSpeed = 2.6;
+        const pageProgress = Math.max(0, Math.min(1, (scrollProgress - startTurn) * turnSpeed));
+        pageGroup.rotation.y = -Math.PI * pageProgress * 0.97;
       });
 
-      // 3. Book orientation in 3D space during scroll
-      // As scroll proceeds, the book turns center-facing and scales gently
-      const baseRotX = 0.45 - scrollProgress * 0.4;
-      const baseRotY = -0.3 + scrollProgress * 0.3;
-      const parallaxX = mouse.y * 0.15;
-      const parallaxY = mouse.x * 0.2;
+      // 3. Straight, upright, centered book orientation throughout scroll
+      const baseRotX = 0.08 - scrollProgress * 0.05;
+      const baseRotY = 0.0;
+      const parallaxX = mouse.y * 0.04;
+      const parallaxY = mouse.x * 0.05;
 
       bookGroup.rotation.x = baseRotX + parallaxX;
       bookGroup.rotation.y = baseRotY + parallaxY;
-      bookGroup.position.y = -scrollProgress * 0.4;
-      bookGroup.position.z = scrollProgress * 0.5;
+      bookGroup.rotation.z = 0.0;
+      bookGroup.position.y = -scrollProgress * 0.15;
+      bookGroup.position.z = 0.0;
 
       // Light beam intensity changes as book opens
       if (goldPointLight) {
