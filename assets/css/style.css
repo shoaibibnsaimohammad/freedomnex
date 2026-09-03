@@ -1510,6 +1510,23 @@ section {
   z-index: 5;
 }
 
+.site-footer .brand-name {
+  background: linear-gradient(135deg, #ffffff 0%, #ffd6c4 50%, #f4ad8f 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #ffd6c4;
+}
+
+.site-footer .brand-sub {
+  color: #ffd6c4;
+  opacity: 0.9;
+}
+
+.site-footer .brand-logo-img {
+  border-color: #ffd6c4;
+  box-shadow: 0 0 15px rgba(255, 214, 196, 0.25);
+}
+
 .footer-top-grid {
   display: grid;
   grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
