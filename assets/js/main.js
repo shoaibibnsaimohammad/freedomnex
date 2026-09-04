@@ -24,6 +24,7 @@
   const testimonialsContainer = document.getElementById('testimonials-grid');
   const searchModal = document.getElementById('search-modal');
   const pillarModal = document.getElementById('pillar-modal');
+  const devNoticeModal = document.getElementById('dev-notice-modal');
   const toast = document.getElementById('toast-notice');
   const newsletterForm = document.getElementById('newsletter-form');
   const mobileToggle = document.querySelector('.mobile-menu-toggle');
@@ -258,6 +259,7 @@
     renderTimeline();
     renderTestimonials();
     setupEventListeners();
+    setupDevNoticeModal();
   }
 
   // 1. Live User Time and Timezone Display
@@ -527,6 +529,7 @@
       modal.addEventListener('click', (e) => {
         if (e.target === modal) {
           modal.classList.remove('open');
+          document.body.style.overflow = '';
         }
       });
     });
@@ -535,9 +538,51 @@
     const closePillarBtn = document.getElementById('close-pillar-btn');
     if (closePillarBtn) {
       closePillarBtn.addEventListener('click', () => {
-        if (pillarModal) pillarModal.classList.remove('open');
+        if (pillarModal) {
+          pillarModal.classList.remove('open');
+          document.body.style.overflow = '';
+        }
       });
     }
+
+    // Under Development modal triggers & close buttons
+    const closeDevModalBtn = document.getElementById('close-dev-modal-btn');
+    const acknowledgeDevBtn = document.getElementById('acknowledge-dev-btn');
+    const announcementTrigger = document.getElementById('announcement-modal-trigger');
+    const announcementStrip = document.getElementById('top-strip-announcement');
+
+    if (closeDevModalBtn) {
+      closeDevModalBtn.addEventListener('click', closeDevNoticeModal);
+    }
+    if (acknowledgeDevBtn) {
+      acknowledgeDevBtn.addEventListener('click', () => {
+        closeDevNoticeModal();
+        showToast('Welcome to FreedomNex! You can review details anytime from the top bar.');
+      });
+    }
+    if (announcementTrigger) {
+      announcementTrigger.addEventListener('click', (e) => {
+        e.stopPropagation();
+        openDevNoticeModal();
+      });
+    }
+    if (announcementStrip) {
+      announcementStrip.style.cursor = 'pointer';
+      announcementStrip.addEventListener('click', openDevNoticeModal);
+    }
+
+    // Global ESC key listener to close active modals
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        if (devNoticeModal && devNoticeModal.classList.contains('open')) {
+          closeDevNoticeModal();
+        }
+        if (pillarModal && pillarModal.classList.contains('open')) {
+          pillarModal.classList.remove('open');
+          document.body.style.overflow = '';
+        }
+      }
+    });
 
     // Newsletter submit
     if (newsletterForm) {
@@ -676,6 +721,25 @@
     }, 4000);
   }
 
+  function openDevNoticeModal() {
+    if (!devNoticeModal) return;
+    devNoticeModal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeDevNoticeModal() {
+    if (!devNoticeModal) return;
+    devNoticeModal.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  function setupDevNoticeModal() {
+    // Show development notice popup when user visits the app
+    setTimeout(() => {
+      openDevNoticeModal();
+    }, 450);
+  }
+
   function openPillarModal(pillarId) {
     if (!siteData || !siteData.pillars || !pillarModal) return;
     const pillar = siteData.pillars.find(p => p.id === pillarId);
@@ -695,7 +759,7 @@
         </ul>
       </div>
       <div style="display: flex; justify-content: flex-end; gap: 1rem;">
-        <button class="btn-gold-primary" onclick="window.FreedomNexApp.showToast('Pillar curriculum syllabus added to your study plan.'); document.getElementById('pillar-modal').classList.remove('open');">
+        <button class="btn-gold-primary" onclick="window.FreedomNexApp.showToast('Pillar curriculum syllabus added to your study plan.'); document.getElementById('pillar-modal').classList.remove('open'); document.body.style.overflow = '';">
           <i class="fas fa-bookmark"></i>
           <span>Save to Study Plan</span>
         </button>
@@ -703,11 +767,14 @@
     `;
 
     pillarModal.classList.add('open');
+    document.body.style.overflow = 'hidden';
   }
 
   // Global Public API
   window.FreedomNexApp = {
     openPillarModal,
+    openDevNoticeModal,
+    closeDevNoticeModal,
     showToast,
     jumpToQuote: function (idx) {
       currentQuoteIndex = idx;

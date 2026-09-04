@@ -35,7 +35,7 @@
 
   <!-- Navigation Header -->
   <header class="site-header" id="site-header">
-    <!-- Top Black Strip: Contact Number & User Time with Timezone -->
+    <!-- Top Black Strip: Contact Number, Development Notice & User Time with Timezone -->
     <div class="top-strip" id="top-strip">
       <div class="container top-strip-inner">
         <div class="top-strip-item top-strip-contact">
@@ -45,6 +45,19 @@
             <span class="top-strip-value">+91 92110 43281</span>
           </a>
         </div>
+        
+        <div class="top-strip-item top-strip-announcement" id="top-strip-announcement">
+          <span class="announcement-badge">
+            <i class="fas fa-tools"></i> Under Development
+          </span>
+          <span class="announcement-msg">
+            Notice: Site under development — all contents are for example only.
+          </span>
+          <button class="announcement-details-btn" id="announcement-modal-trigger" type="button" aria-label="View development notice details">
+            <span>Details</span> <i class="fas fa-arrow-right"></i>
+          </button>
+        </div>
+
         <div class="top-strip-item top-strip-time" id="top-strip-time" aria-label="User Local Time and Timezone">
           <i class="far fa-clock top-strip-icon" aria-hidden="true"></i>
           <span class="top-strip-label">Local Time:</span>
@@ -557,6 +570,62 @@
   <!-- ==========================================================================
        Interactive Modals
        ========================================================================== -->
+
+  <!-- Under Development Notice Modal (Triggered on visitor arrival) -->
+  <div class="modal-backdrop dev-modal-backdrop" id="dev-notice-modal" role="dialog" aria-modal="true" aria-labelledby="dev-modal-title">
+    <div class="modal-window dev-modal-window">
+      <button class="modal-close-btn" id="close-dev-modal-btn" aria-label="Close development notice">&times;</button>
+      
+      <div class="dev-modal-header">
+        <div class="dev-modal-icon-badge">
+          <i class="fas fa-compass-drafting"></i>
+        </div>
+        <div class="dev-modal-arabic-tag">بَيْتُ الْحِكْمَةِ • Development Preview</div>
+        <h2 class="dev-modal-title" id="dev-modal-title">Site Under Development</h2>
+        <p class="dev-modal-subtitle">Welcome to FreedomNex — House Of Wisdom</p>
+      </div>
+
+      <div class="dev-modal-body">
+        <div class="dev-modal-notice-banner">
+          <i class="fas fa-exclamation-triangle notice-banner-icon"></i>
+          <div>
+            <strong>Notice &amp; Demonstration Disclaimer:</strong> This website is currently under active development. All content, curriculum paths, quotations, audio/video previews, and materials displayed across this platform are for <em>example and demonstration purposes only</em>.
+          </div>
+        </div>
+
+        <div class="dev-modal-points">
+          <div class="dev-point-item">
+            <div class="dev-point-icon"><i class="fas fa-laptop-code"></i></div>
+            <div class="dev-point-content">
+              <h4>Active UI/UX Prototype</h4>
+              <p>Features, typography, layout, and 3D manuscript interactions are undergoing active design iteration.</p>
+            </div>
+          </div>
+          <div class="dev-point-item">
+            <div class="dev-point-icon"><i class="fas fa-book-open"></i></div>
+            <div class="dev-point-content">
+              <h4>Illustrative Content</h4>
+              <p>Course codes, syllabi, and wisdom excerpts serve as sample models for the upcoming scholarly archive.</p>
+            </div>
+          </div>
+          <div class="dev-point-item">
+            <div class="dev-point-icon"><i class="fas fa-comments"></i></div>
+            <div class="dev-point-content">
+              <h4>Feedback &amp; Continuous Growth</h4>
+              <p>We are refining every detail to create a contemplative digital sanctuary. Thank you for exploring!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="dev-modal-footer">
+        <button type="button" class="btn-gold-primary dev-modal-btn" id="acknowledge-dev-btn">
+          <i class="fas fa-check-circle"></i>
+          <span>I Understand — Explore Preview</span>
+        </button>
+      </div>
+    </div>
+  </div>
 
   <!-- Pillar Details Modal -->
   <div class="modal-backdrop" id="pillar-modal" role="dialog" aria-modal="true">
